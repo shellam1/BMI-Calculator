@@ -10,6 +10,10 @@ public class BMI_Calculator {
 		scnr = new Scanner(System.in);
 		
 		String command = "quit";
+		System.out.print("Press Enter if you would to continue or type QUIT to exit: ");
+		command = input.nextLine();
+		while (!command.equalsIgnoreCase ("quit")) {
+			
 		System.out.print("Enter weight in pounds: ");
 		int numWeight = scnr.nextInt();
 		numWeight *= 703;
@@ -22,9 +26,7 @@ public class BMI_Calculator {
 
 		int numHeight = (numFeet * 12) + numInches;
 		double bodyMassIndex = numWeight / (Math.pow(numHeight, 2));
-		System.out.print("Press Enter if you would to continue or type QUIT to exit: ");
-		command = input.nextLine();
-		while (!command.equalsIgnoreCase ("quit")) {
+		
 		if (bodyMassIndex < 18.5) {
 			System.out.printf("%.2f\n", bodyMassIndex);
 			System.out.println("You are underweight.");
